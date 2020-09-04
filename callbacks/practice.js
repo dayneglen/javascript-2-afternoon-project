@@ -29,6 +29,10 @@
 
 // Code Here 
 
+function first (arr, callback) {
+  return callback(arr[0]);
+}
+
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
@@ -49,6 +53,10 @@ first(names, function(firstName){
 
 //Code Here
 
+let last =  function (arr, callback) {
+  return callback(arr[arr.length-1]);
+}
+
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,6 +74,11 @@ last(names, function(lastName){
 */
 
 //Code Here
+
+function multiply (a, b, callback) {
+  return callback(a * b);
+}
+
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -85,6 +98,15 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
+
+let contains = function (arr, name, callback) {
+  for (let i = 0; i < arr.length; i++){
+    if (arr[i] === name) {
+      return callback(true);
+    }
+  }
+  return callback(false);
+}
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -107,6 +129,11 @@ contains(names, 'Colt', function(result){
 
 //Code Here
 
+let uniq = function (arr, callback) {
+  let uniqueArr = [...new Set(arr)];
+  return callback(uniqueArr);
+}
+
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -124,6 +151,12 @@ uniq(names, function(uniqArr){
 
 //Code Here 
 
+function each(arr, callback) {
+  for (let i = 0; i < arr.length; i++) {
+    callback(arr[i], i);
+  }
+}
+
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -140,6 +173,14 @@ each(names, function(item, indice){
 */
 
 // Code here
+
+let getUserById = function (users, id, callback) {
+  for (let i = 0; i < users.length; i++) {
+    if (id === users[i].id) {
+      return callback(users[i]);
+    }
+  }
+}
 
 // Do not edit the code below.
 var users = [
