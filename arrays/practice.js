@@ -243,14 +243,18 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
-function addTen (arr) {
+// tried to figure out how in the world to do this one. Couldn't figure it out. Any tips here?
+function makeNumber(arr) {
   for (let i = 0; i < arr.length; i++) {
-      
-    parseInt(arr[i]);
-  
+    arr[i] = parseInt(arr[i]);
+  }
+}
+
+
+function addTen(arr) {
+  makeNumber(arr);
+  for (let i = 0; i < arr.length; i++) {
     arr[i] += 10;
-   
   }
   return arr;
 }
@@ -298,17 +302,16 @@ function longer(arr1, arr2) {
 
 //Code Here
 
-function smaller(arr1, arr2) {
-  if (arr2.length < arr1.length) {
-    return arr2;
-  }
-  return arr1;
-}
-
 const both = (arr1, arr2) => {
   let newArray = [];
-  let smallerArray = smaller(arr1, arr2);
-  return smallerArray;
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]){
+        newArray.push(arr1[i]);
+      }
+    }
+  }
+  return newArray;
 }
 
 
